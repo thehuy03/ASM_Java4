@@ -8,7 +8,7 @@
 <body>
 	<table class="table table-light border-danger table-bordered table-striped">
 		<div class="d-flex justify-content-center" style="width: 100%;">
-			<div class="ms-5">Video title:</div>
+			<div class="ms-5 text-light">Video title:</div>
 			<select class="form-select ms-3" name="cboVideo"
 				onchange="location.href=window.location.href.split('?')[0]+'?TabReport=3&videoId='+this.value"
 				aria-label="Default select example">
@@ -27,8 +27,8 @@
 		<tbody>
 			<c:forEach var="i" items="${report}">
 				<tr>
-					<th scope="row">${i.user.getId()}</th>	
-					<td>${report.size()}</td>
+					<th scope="row">${i.getGroup()}</th>	
+					<td>${i.getCountNumber()}</td>
 				</tr>
 			</c:forEach>
 		</tbody>

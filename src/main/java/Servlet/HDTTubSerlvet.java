@@ -25,6 +25,7 @@ import DAO.FavoriteDAO;
 //import com.AnLa.NET.Email;
 
 import DAO.HistoryDAO;
+import DAO.ReportDAO;
 import DAO.UserDAO;
 import DAO.VideoDAO;
 import DAO.ViewDAO;
@@ -47,7 +48,7 @@ import modal.Views;
 public class HDTTubSerlvet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	static List<Video> listVD = new ArrayList<>();
-	private static Email SMTP = new Email("dangthehuh2903@gmail.com", "ffwtvkuhajhbdijm");
+	private static Email SMTP = new Email("dangthehuh2903@gmail.com", "");
 
 	@Override
 	public void destroy() {
@@ -107,12 +108,13 @@ public class HDTTubSerlvet extends HttpServlet {
 		if(TabReport.equals("1")) {
 			req.setAttribute("RpVdLike", VideoDAO.findAll());
 		}else if(TabReport.equals("2")) {
-			
+			id=req.getParameter("videoId");
+			req.setAttribute("fvrt", FavoriteDAO.findByIVideo(id));
 		}else if(TabReport.equals("3")) {
 			id=req.getParameter("videoId");
 			req.setAttribute("videoId", id);
 			System.out.println(id);
-			req.setAttribute("report", UserDAO.findUserWatchVideo(id));	
+			req.setAttribute("report", ReportDAO.findListReport(id));	
 		}
 		
 		req.setAttribute("titleVideo", VideoDAO.findAll());

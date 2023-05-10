@@ -10,29 +10,6 @@
 </head>
 <body>
 <c:url var="url" value="/HDTTube"/>
-<!--  
-		<form action="${url}/reports" method="POST" class="d-flex">
-			<input class="form-control me-2" name="titleVD" type="text" placeholder="Search" aria-label="Search">
-			<button class="btn btn-danger" type="submit">Search</button>
-		</form>
-	<table
-		class="table table-light border-danger table-bordered table-striped">
-		<thead>
-			<tr>
-				<th scope="col">User ID</th>
-				<th scope="col">Video ID</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach var="i" items="${report}">
-				<tr>
-					<th scope="row">${i.user.getId()}</th>
-					<td>${i.video.getId()}</td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
-	-->
 	<div class="container">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">

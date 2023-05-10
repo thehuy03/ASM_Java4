@@ -3,6 +3,7 @@ package console;
 import java.io.IOException;
 
 import DAO.HistoryDAO;
+import DAO.ReportDAO;
 import DAO.UserDAO;
 import DAO.VideoDAO;
 import Utils.*;
@@ -26,8 +27,7 @@ public class NewFile {
 //			e.printStackTrace();
 //		}
 		
-		System.out.println(VideoDAO.findAllid().size());
-		
+		System.out.println(ReportDAO.findListReportLiked("60EKVNBc_TM").get(0).getGroup());		
 	}
 
 }
